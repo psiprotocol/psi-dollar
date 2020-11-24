@@ -21,13 +21,13 @@ import "@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol";
 import "@openzeppelin/contracts/access/roles/MinterRole.sol";
 import "./Permittable.sol";
-import "./IPsi.sol";
+import "./IPsd.sol";
 
 
-contract Psi is IPsi, MinterRole, ERC20Detailed, Permittable, ERC20Burnable  {
+contract Psd is IPsd, MinterRole, ERC20Detailed, Permittable, ERC20Burnable  {
 
     constructor()
-    ERC20Detailed("Psi", "PSI", 18)
+    ERC20Detailed("Psi Dollar", "PSD", 18)
     Permittable()
     public
     { }
@@ -43,7 +43,7 @@ contract Psi is IPsi, MinterRole, ERC20Detailed, Permittable, ERC20Burnable  {
             _approve(
                 sender,
                 _msgSender(),
-                allowance(sender, _msgSender()).sub(amount, "Psi: transfer amount exceeds allowance"));
+                allowance(sender, _msgSender()).sub(amount, "Psi Dollar: transfer amount exceeds allowance"));
         }
         return true;
     }
